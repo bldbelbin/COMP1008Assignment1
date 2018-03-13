@@ -110,10 +110,15 @@ public class Instructor {
             this.city = city;
     }
 
+    // Method to get the value of the postal code
     public String getPostalCode() {
         return postalCode;
     }
-
+ 
+    /**
+     * This method sets the value for postal code to the value of postalCode
+     * If a postal code is not entered it throws an exception
+     */
     public void setPostalCode(String postalCode) {
         
         if (postalCode.isEmpty())
@@ -122,10 +127,16 @@ public class Instructor {
             this.postalCode = postalCode;
     }   
 
+    // method to get the hireDate. Uses LocalDate 
     public LocalDate getHireDate() {
         return hireDate;
     }
 
+     /**
+     * This method sets the value for hire date to the value of HireDate
+     * If the hire date is before 1 month before the current date
+     * it throws an exception
+     */
     public void setHireDate(LocalDate hireDate) {
         
        LocalDate futureMonth = LocalDate.now().plusMonths(1);
@@ -134,10 +145,15 @@ public class Instructor {
         else throw new IllegalArgumentException("Hire day should be one Month before the current date");
     }
 
+    // Method to get the instructors birthday
     public LocalDate getBirthday() {
         return birthday;
     }
 
+     /**
+     * This method sets the value for birthday to the value of birthday
+     * If the instructors age is over 90 it throws an exception
+     */
     public void setBirthday(LocalDate birthday) {
         int age = Period.between
                         (birthday, LocalDate.now()).getYears();
@@ -149,10 +165,18 @@ public class Instructor {
         
     }
 
+    // Method gets the employee number
     public int getEmployeeNum() {
         return employeeNum;
     }
 
+    public Instructor() {
+    }
+    
+    /**
+     * This method sets the value for employee number to the value of employeeNum.
+     * If the employee number is less than 0 its throws and exception
+     */
     public void setEmployeeNum(int employeeNum) {
         
         if (employeeNum > 0)
