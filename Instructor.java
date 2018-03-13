@@ -216,6 +216,10 @@ public class Instructor {
 
     }
     
+    /*•	This method accepts a course code as a String and adds it to the list of
+    teachable subjects in UPPERCASE.  If the course code is empty, 
+    it should throw an IllegalArgumentException.
+    */
     public void addCourseToAbilities(String courseCode) {
         
         if (courseCode.isEmpty())
